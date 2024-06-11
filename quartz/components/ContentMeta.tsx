@@ -45,8 +45,8 @@ export default ((opts?: Partial<ContentMetaOptions>) => {
       const segmentsElements = segments.map((segment) => <span>{segment}</span>)
 
       return (
-        <p show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
-          {segmentsElements}
+        <p /* show-comma={options.showComma} class={classNames(displayClass, "content-meta")}>
+          {segmentsElements} */>
         </p>
       )
     } else {

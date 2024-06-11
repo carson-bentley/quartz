@@ -1,3 +1,11 @@
+
+declare namespace JSX {
+  interface IntrinsicElements {
+    'giscus-widget': React.DetailedHTMLProps<React.HTMLAttributes<HTMLElement>, HTMLElement>;
+  }
+
+}
+
 declare module "*.scss" {
   const content: string
   export = content

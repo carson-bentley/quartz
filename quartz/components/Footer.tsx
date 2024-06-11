@@ -2,6 +2,10 @@ import { QuartzComponent, QuartzComponentConstructor, QuartzComponentProps } fro
 import style from "./styles/footer.scss"
 import { version } from "../../package.json"
 import { i18n } from "../i18n"
+import Comments from "./Comments"
+import * as Component from "../../quartz/components"
+
+
 
 interface Options {
   links: Record<string, string>
@@ -11,9 +15,15 @@ export default ((opts?: Options) => {
   const Footer: QuartzComponent = ({ displayClass, cfg }: QuartzComponentProps) => {
     const year = new Date().getFullYear()
     const links = opts?.links ?? []
+   
+    
+    /* document.addEventListener("nav", () => {
+      
+      console.log("reload")
+    }) */
     return (
       <footer class={`${displayClass ?? ""}`}>
-        <hr />
+        {/* <hr />
         <p>
           {i18n(cfg.locale).components.footer.createdWith}{" "}
           <a href="https://quartz.jzhao.xyz/">Quartz v{version}</a> © {year}
@@ -24,7 +34,12 @@ export default ((opts?: Options) => {
               <a href={link}>{text}</a>
             </li>
           ))}
-        </ul>
+        </ul> 
+         comment script, can move anywhere we want comments. */}
+         
+         {/* Component.Comments() */}
+        
+        
       </footer>
     )
   }
