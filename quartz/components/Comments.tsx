@@ -1,26 +1,25 @@
 
 // @ts-ignore
 import script from "./scripts/comments.inline"
+// @ts-ignore
+import script2 from "./scripts/approval.inline"
 import { QuartzComponentProps, QuartzComponentConstructor } from "./types"
 import 'giscus';
 
 
 
 
-interface Options {
-    //empty interface to satisfy quartz
-  }
-   
+
 //giscus-widget throws error because it's not proper JSX
 //Global namespace for giscus-widget in quartz/index.d.ts
-export default ((userOpts?: Options) => {
+export default (() => {
     
     function Comments(props: QuartzComponentProps) { 
     return (
         <>
         {/* esm.sh */}
         <script type="module" src="https://esm.sh/giscus"></script>
-        <giscus-widget
+        <giscus-widget 
             id="comments"
             repo="carson-bentley/quartz"
             repoid="R_kgDOMHlTIg"
@@ -40,5 +39,6 @@ export default ((userOpts?: Options) => {
       )
     }
     Comments.afterDOMLoaded=script;
+    Comments.afterDOMLoaded=script2;
     return Comments
   }) satisfies QuartzComponentConstructor

@@ -1,4 +1,7 @@
 
+
+
+
 //Function to refresh the Giscus comments.
 //Without this, comments will not load through navigations
 function reloadIframeScript() {
@@ -25,6 +28,7 @@ function reloadIframeScript() {
     script.setAttribute('lang', 'en');
     script.setAttribute('loading', 'lazy');
     script.setAttribute('crossorigin', 'anonymous')
+   
     
     document.head.appendChild(script);
   }
@@ -32,4 +36,5 @@ function reloadIframeScript() {
 //call function everytime user navigates
 document.addEventListener("nav", () => {
       reloadIframeScript();
+      
   })
